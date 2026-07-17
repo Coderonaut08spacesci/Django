@@ -9,7 +9,7 @@ from django.shortcuts import render
 def index_view(request):
     # Django automatically looks inside your app's "templates" folder, 
     # so you just specify the path relative to that folder.
-    return render(request, 'myapp/index.html')
+    return render(request, 'myapp/form.html')
 
 
 def home(request): 
