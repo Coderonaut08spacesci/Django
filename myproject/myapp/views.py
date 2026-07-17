@@ -3,6 +3,15 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
 # Create your views here.
+
+from django.shortcuts import render
+
+def index_view(request):
+    # Django automatically looks inside your app's "templates" folder, 
+    # so you just specify the path relative to that folder.
+    return render(request, 'myapp/index.html')
+
+
 def home(request): 
     html="<h1 style='background-color:lightyellow;color:red;text-align:center'>The Cold Coffee</h1>" 
     crt=datetime.now().hour 
@@ -26,7 +35,7 @@ def home(request):
 def books_section(request):
     html="""<body style='background-color:lightgreen;'><h1 style="background-color:yellow;text-align:center">Top 3 Mystery Thrillers</h1> 
     <br>
-    <h5 style='text-align:right'>...Read a thriller while sipping your hot latte...</h5>
+    <h5 style='text-align:right;color:red'>...Read a thriller while sipping your hot latte...</h5>
     """ 
     books={1:{'authname':'Freida McFadden', 
               'bookname':'The Housemaid', 
@@ -40,7 +49,7 @@ def books_section(request):
            } 
     for key,value in books.items(): 
         html+=f""" 
-            <h5 style='color:blue;'>{key}.<ul><li>Book name: {value['bookname']}</li> 
+            <ul><li style='color:blue;'>{key}.Book name: {value['bookname']}</li> 
             <li style='color:yellow;'>Author: {value['authname']}</li> 
             <li style='color:red;'>Price: {value['price']}</li> 
             </ul> 
