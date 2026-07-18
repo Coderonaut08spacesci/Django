@@ -23,5 +23,5 @@ urlpatterns = [
     path('',views.home),
     path('book/',views.books_section),
     path('table/',views.table),
-    path('index/', views.index_view, name='index'),
+    path('index/', views.index_view),
 ]
