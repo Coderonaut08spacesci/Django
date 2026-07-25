@@ -24,3 +24,17 @@ class cars(View):
             </tr>"""
         html+="</table></body>"
         return HttpResponse(html)
+class CarsView(View):
+    car = {
+        'Toyota': 2500000,
+        'Chevrolet': 3000000,
+        'Fiat': 1500000,
+        'Honda': 2000000
+    }
+
+    def get(self, request):
+        # Pass the dictionary context into the template render call
+        context = {
+            'cars': self.car
+        }
+        return render(request, 'carshop.html', context)

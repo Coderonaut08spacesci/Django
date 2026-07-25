@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Pricing Details</title>
+  
+  <!-- Import Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card-container {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 550px;
+      padding: 32px 24px;
+    }
+
+    h1 {
+      color: #1e293b;
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 24px;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    thead {
+      background: linear-gradient(90deg, #4f46e5, #6366f1);
+      color: #ffffff;
+    }
+
+    th {
+      padding: 14px 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    td {
+      padding: 14px 20px;
+      font-size: 0.95rem;
+      color: #334155;
+      font-weight: 500;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    th:nth-child(2),
+    td:nth-child(2) {
+      text-align: right;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    tbody tr:hover {
+      background-color: #eef2ff;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="card-container">
+    <h1>Car Pricing Details</h1>
+    
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Brand</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Django Loop -->
+          {% for brand, price in cars.items %}
+          <tr>
+            <td>{{ brand }}</td>
+            <!-- intcomma formats 2500000 into 2,500,000 -->
+            <td>${{ price }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+</body>
+</html>
