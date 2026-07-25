@@ -16,12 +16,15 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from myapp import views
+
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('',views.home),
+    path('home/',views.home),
     path('book/',views.books_section),
     path('table/',views.table),
     path('index/', views.index_view),
+    path('',include('CBV.urls')),
+
 ]
