@@ -9,7 +9,8 @@ class cars(View):
          'Honda': 2000000
         }
     def get(self,req):
-        html="""<h1>Car Pricing Details</h1>
+        html="""<body>
+        <h1>Car Pricing Details</h1>
         <table border=1>
         <tr>
         <th>Brand</th>
@@ -21,5 +22,5 @@ class cars(View):
             <td>{brand}</td>
             <td>{price}</td>
             </tr>"""
-        html+="</table>"
+        html+="</table></body>"
         return HttpResponse(html)
