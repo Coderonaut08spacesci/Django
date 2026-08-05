@@ -1,0 +1,18 @@
+<html> 
+<head><title>Home</title></head> 
+<body> 
+<h1 style="background-color:aqua;"> The Japanese Cuisine</h1> 
+<h4 style="color:red;">Today's Special</h4> 
+<ul type="square"> 
+    <li> 
+        <a href="menudetails/1" target='blank' >Ramen</a> <!--First way of setting endpoint and parameter (Static way) Eg. href="menudetails/1"--> 
+    </li> 
+    <li> 
+        <a href="{%url 'Menu' mid=2%}">Sushi</a> <!--Second way of setting endpoint and parameter (Dynamic way) Eg. href="{%url 'Menu' mid=2%}"--> 
+    </li> 
+    <li> 
+        <a href="{%url 'Menu' mid=3%}">Matcha Latte</a> 
+    </li> 
+</ul> 
+</body> 
+</html> 

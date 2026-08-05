@@ -25,6 +25,7 @@ urlpatterns = [
     path('book/',views.books_section),
     path('table/',views.table),
     path('index/', views.index_view),
-    path('',include('CBV.urls')),
-
+    path('cbv/',include('CBV.urls')),
+    path('path/',include('pathparameter.urls')),
+    path('',include('queryparameter.urls')),
 ]
