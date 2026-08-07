@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path,include
-from myapp import views
+from apps_pr1.myapp import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -25,7 +25,8 @@ urlpatterns = [
     path('book/',views.books_section),
     path('table/',views.table),
     path('index/', views.index_view),
-    path('cbv/',include('CBV.urls')),
-    path('path/',include('pathparameter.urls')),
-    path('',include('queryparameter.urls')),
+    path('cbv/',include('apps_pr1.CBV.urls')),
+    path('',include('params_pr2.pathparameter.urls')),
+    path('',include('params_pr2.queryparameter.urls')),
+    path('bodypara/',include('params_pr2.bodyparameter.urls')),
 ]

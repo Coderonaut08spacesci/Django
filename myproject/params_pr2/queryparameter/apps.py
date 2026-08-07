@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class QueryparameterConfig(AppConfig):
-    name = "queryparameter"
+    name = "params_pr2.queryparameter"

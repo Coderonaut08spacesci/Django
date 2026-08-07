@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class CbvConfig(AppConfig):
-    name = "CBV"
+    name = "apps_pr1.CBV"

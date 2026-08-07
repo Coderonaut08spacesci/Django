@@ -1,7 +1,7 @@
 from django.shortcuts import render
 # Create your views here.
 def setform(req):
-    return render(req,"index.html")
+    return render(req,"index2.html")
 def getform(req):
     first=req.GET['fname']
     last=req.GET['lname']

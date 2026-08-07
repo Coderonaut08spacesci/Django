@@ -37,10 +37,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "myapp",
-    "CBV",
-    "pathparameter",
-    "queryparameter",
+    "apps_pr1.myapp",
+    "apps_pr1.CBV",
+    "params_pr2.pathparameter",
+    "params_pr2.queryparameter",
+    "params_pr2.bodyparameter",
 ]
 
 MIDDLEWARE = [
@@ -119,3 +120,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = "static/"
+
+CSRF_TRUSTED_ORIGINS=[
+    'https://*.app.github.dev',
+    'https://localhost:8000',
+]
