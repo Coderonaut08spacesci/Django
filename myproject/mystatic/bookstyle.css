@@ -1,0 +1,17 @@
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background-color:lightgreen;
+}
+h1{
+    background-color:yellow;
+    text-align:center;
+}
+h5{
+    text-align:right;
+    color:red;
+}
+img{
+    max-width:200px;
+    height: auto;
+    display:block;
+}

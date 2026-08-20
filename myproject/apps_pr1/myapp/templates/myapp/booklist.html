@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Booklist</title>
+    <link rel="stylesheet" href="{% static 'bookstyle.css' %}" type="text/css">
+</head>
+
+<body><h1>Top 3 Mystery Thrillers</h1> 
+    <br>
+    <h5>...Read a thriller while sipping your hot latte...</h5>
+    
+    {% for key,value in books.items %} 
+            <ul><li style='color:indigo;'>{{key}}.Book name: {{value.bookname}}</li> 
+                <li style='color:blue;'><img src="{% static value.pic %}"></li>
+                <li style='color:chocolate;'>Author: {{value.authname}}</li> 
+                <li style='color:red;'>Price: {{value.price}}</li> 
+            </ul> 
+    {% endfor %}
+            </body>
+          
+</html>

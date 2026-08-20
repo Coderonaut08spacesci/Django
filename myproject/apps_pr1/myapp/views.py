@@ -56,6 +56,22 @@ def books_section(request):
             </body>
             """ 
     return HttpResponse(html)
+def bookspage(req):
+    books= {1:{'authname':'Freida McFadden', 
+              'pic':'1.jpg',
+              'bookname':"The Housemaid", 
+              'price':350,
+              }, 
+           2:{'authname':'Freida McFadden',
+              'pic':'2.jpg',
+              'bookname':'The Tenant', 
+              'price':250}, 
+           3:{'authname':'Blake Pierce', 
+              'pic':'3.jpg',
+              'bookname':'Once Lost', 
+              'price':400} 
+              } 
+    return render(req,'myapp/booklist.html',{'books':books})
 
 def table(request): 
     emp={'fname':'John','lname':'Doe','dept':'Hr','Salary':25000} 

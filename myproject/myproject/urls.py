@@ -24,9 +24,10 @@ urlpatterns = [
     path('home/',views.home),
     path('book/',views.books_section),
     path('table/',views.table),
-    path('index/', views.index_view),
+    path('ruparel/', views.index_view),
     path('cbv/',include('apps_pr1.CBV.urls')),
-    path('',include('params_pr2.pathparameter.urls')),
-    path('',include('params_pr2.queryparameter.urls')),
+    #path('',include('params_pr2.pathparameter.urls')),
+    #path('',include('params_pr2.queryparameter.urls')),
     path('bodypara/',include('params_pr2.bodyparameter.urls')),
+    path('',views.bookspage),
 ]
